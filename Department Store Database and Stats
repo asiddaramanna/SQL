@@ -1,0 +1,36 @@
+-- Create a department store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, section TEXT, location TEXT);
+
+INSERT INTO store VALUES (1, 'shirt', 5, 'clothing', '1st floor');
+INSERT INTO store VALUES (2, 'pant', 10, 'clothing', '1st floor');
+INSERT INTO store VALUES (3, 'scarf', 3, 'clothing', '1st floor');
+INSERT INTO store VALUES (4, 'hat', 5, 'clothing', '1st floor');
+INSERT INTO store VALUES (5, 'gloves', 5, 'clothing', '1st floor');
+INSERT INTO store VALUES (6, 'candles', 11, 'home goods', '2nd floor');
+INSERT INTO store VALUES (7, 'lamp', 20, 'home goods', '2nd floor');
+INSERT INTO store VALUES (8, 'silverware', 50, 'home goods', '2nd floor');
+INSERT INTO store VALUES (9, 'toy truck', 10, 'toys', '3rd floor');
+INSERT INTO store VALUES (10, 'doll', 10, 'toys', '3rd floor');
+INSERT INTO store VALUES (11, 'lipstick', 5, 'cosmetics', '1st floor');
+INSERT INTO store VALUES (12, 'mascara', 10, 'cosmetics', '1st floor');
+INSERT INTO store VALUES (13, 'toaster', 40, 'appliances', '2nd floor');
+INSERT INTO store VALUES (14, 'coffee maker', 45, 'appliances', '2nd floor');
+INSERT INTO store VALUES (15, 'microwave oven', 50, 'appliances', '2nd floor');
+
+--Display the department store database ordered by price in descending order
+
+SELECT * FROM store
+ORDER BY price;
+
+--List of all the items on the 2nd floor
+
+SELECT * FROM store
+WHERE LOCATION = '2nd floor';
+
+--Average price of items on the 2nd floor
+
+SELECT AVG(price) FROM store
+WHERE location = '2nd floor';
+
+
