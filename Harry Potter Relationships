@@ -1,0 +1,31 @@
+/* Create table of Harry Potter Characters */
+CREATE TABLE characters (ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    gender TEXT,
+    strength INTEGER,
+    alignment TEXT);
+
+/*Populate table */
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Harry Potter', 'male', 6, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Hermione Granger', 'female', 8, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Ron Weasley', 'male', 5, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Ginny Weasley', 'female', 6, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Neville Longbottom', 'male', 4, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Draco Malfoy', 'male', 3, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Lily Potter', 'female', 7, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('James Potter', 'male', 7, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Molly Weasley', 'female', 5, 'good');
+INSERT INTO characters (name, gender, strength, alignment) VALUES ('Arthur Weasley', 'male', 6, 'good');
+
+/*Create Table for Parent-Child relationships*/
+CREATE TABLE parents (ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    mother_id INTEGER,
+    father_id INTEGER,
+    child_id INTEGER);
+INSERT INTO parents (mother_id, father_id, child_id) VALUES (7, 8, 1);
+INSERT INTO parents (mother_id, father_id, child_id) VALUES (9, 10, 3);
+INSERT INTO parents (mother_id, father_id, child_id) VALUES (9, 10, 4);
+
+
+
+
