@@ -1,3 +1,8 @@
+#In this SQL code, I queried a database, BIT_DB, with one table for customer information and five tables for sales information from the months of January through May
+#The customer table, customers, had the following columns: order_id, acctnum
+#Each of the five sales tables; JanSales, FebSales, MarSales, AprSales, MaySales; had the folling columns: orderID, Product, Quantity, price, orderdate, location
+
+
 /*How many orders were placed in January?*/
 SELECT COUNT(*) FROM BIT_DB.JanSales;
 
@@ -33,3 +38,5 @@ SELECT COUNT(DISTINCT C.acctnum) AS Number_of_customers, AVG(quantity*price) AS 
     JOIN BIT_DB.customers AS C
     ON F.orderID = C.order_ID
     WHERE F.Quantity > 2;
+
+
