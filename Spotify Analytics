@@ -1,0 +1,59 @@
+# For this SQL code, I am using a Spotify dataset from Kaggle.
+# I created a new data table inside the database BIT_DB called Spotifydata and populated it with the data from the .csv file I downloaded from Kaggle.
+# Then, I used SQL to perform some analytics.
+
+CREATE TABLE BIT_DB.Spotifydata (
+  id integer PRIMARY KEY,
+  artist_name varchar NOT NULL,
+  track_name varchar NOT NULL,
+  track_id varchar NOT NULL,
+  popularity integer NOT NULL,
+  danceability decimal(4,3) NOT NULL,
+  energy decimal(4,3) NOT NULL,
+  key integer NOT NULL,
+  loudness decimal(5,3) NOT NULL,
+  mode integer NOT NULL,
+  speechiness decimal(5,4) NOT NULL,
+  acousticness decimal(6,5) NOT NULL,
+  instrumentalness text NOT NULL,
+  liveness decimal(5,4) NOT NULL,
+  valence decimal(4,3) NOT NULL,
+  tempo decimal(6,3) NOT NULL,
+  duration_ms integer NOT NULL,
+  time_signature integer NOT NULL 
+)
+
+/*How many songs does each artist have and which artist has the most popular songs on average?*/
+SELECT artist_name as Name, avg(popularity) as Avgerage_Popularity, count(*) as Number_of_Songs
+    FROM BIT_DB.Spotifydata
+    GROUP BY artist_name
+    ORDER BY avgerage_popularity desc;
+
+/*Which song is Olivia Rodrigo's most popular song*/
+SELECT *
+    FROM BIT_DB.Spotifydata
+    WHERE artist_name = 'Olivia Rodrigo'
+    ORDER BY popularity desc;
+    
+/*Which song is Doja Cat's most popular song*/
+SELECT *
+    FROM BIT_DB.Spotifydata
+    WHERE artist_name = 'Doja Cat'
+    ORDER BY popularity desc;
+    
+/*Given danceability, which artists songs are more likely to be played at school dances?*/
+SELECT artist_name, avg(danceability) as average_danceability
+    FROM BIT_DB.Spotifydata
+    GROUP BY artist_name
+    ORDER BY average_danceability desc;
+    
+/*Using Common Table Expressions (CTEs), Calculate the average popularity for the artists in the Spotify data table.
+Then, for every artist with an average popularity of 90 or above, show their name, their average popularity, and label them as "Top Star"*/
+WITH tempTable AS (
+    SELECT artist_name as name, avg(popularity) as average_popularity
+    FROM Spotifydata
+    GROUP BY artist_name
+)
+SELECT name, average_popularity, 'Top Star' as tag
+    FROM tempTable
+    WHERE average_popularity >= 90;
