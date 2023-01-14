@@ -1,5 +1,5 @@
 # In this analysis, I am using data that represents a digital media store. This data is stored in a database called chinook.
-# This database has tables for albums, artists, customers, employees, genres, invoice_items, invoices, media_types, playlist_tracks, playlists, tracks
+# This database has tables for albums, artists, customers, employees, genres, invoice_items, invoices, media_types, playlist_tracks, playlists, tracks.
 
 /*How many customers are not from the United States*/
 SELECT *
