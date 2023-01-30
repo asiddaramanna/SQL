@@ -1,3 +1,4 @@
+-- This is a Marvel Characters table that I created using pre-existing data to find interesting facts/properties about Marvel heroes and villains.
 /* Marvel Heroes and Villains */
 /*Create a table of Marvel characters*/
 CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
