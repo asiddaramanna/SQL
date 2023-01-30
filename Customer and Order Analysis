@@ -1,5 +1,5 @@
 #In this SQL code, I queried a database, BIT_DB, with one table for customer information and five tables for sales information from the months of January through May
-#The customer table, customers, had the following columns: order_id, acctnum
+#The customer table, customers, had the following columns: order_id, acctnum.
 #Each of the five sales tables; JanSales, FebSales, MarSales, AprSales, MaySales; had the folling columns: orderID, Product, Quantity, price, orderdate, location
 
 
